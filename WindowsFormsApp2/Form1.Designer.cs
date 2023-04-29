@@ -238,7 +238,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(369, 291);
+            this.tabPage2.Size = new System.Drawing.Size(370, 291);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;

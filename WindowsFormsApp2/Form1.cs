@@ -67,8 +67,7 @@ namespace WindowsFormsApp2
                 tabControl1.SelectedIndex = index;
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void CalculateResult(TextBox textBox1, TextBox textBox2, Label label)
         {
             string pattern = @"\s+";
             string target = "";
@@ -76,28 +75,22 @@ namespace WindowsFormsApp2
             string findSpaces1 = regex.Replace(textBox1.Text, target);
             string findSpaces2 = regex.Replace(textBox2.Text, target);
             Counting getAnswer = new Counting(findSpaces1, findSpaces2, index, task);
-            label5.Text = getAnswer.GetAnswer();
-            if(getAnswer.GetAnswer()!="no_data")
+            string result = getAnswer.GetAnswer();
+            if (result != "no_data")
             {
-                label4.Visible = true;
-                label5.Visible = true;
+                label.Visible = true;
+                label.Text = (index == 1) ? result + "%" : result;
             }
         }
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalculateResult(textBox1, textBox2, label5);
+            label4.Visible = true;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            string pattern = @"\s+";
-            string target = "";
-            Regex regex = new Regex(pattern);
-            string findSpaces3 = regex.Replace(textBox3.Text, target);
-            string findSpaces4 = regex.Replace(textBox24.Text, target);
-            Counting getAnswer = new Counting(findSpaces3, findSpaces4, index, task);
-            label8.Text = getAnswer.GetAnswer() + "%";
-            if (getAnswer.GetAnswer()!="no_data")
-            {         
-                label8.Visible = true;
-                label9.Visible = true;
-            } 
+            CalculateResult(textBox3, textBox24, label8);
+            label9.Visible = true;
         }
     }
 }

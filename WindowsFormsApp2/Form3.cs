@@ -75,12 +75,6 @@ namespace WindowsFormsApp2
             Sixth.Click += Button_Click;
             Sev.Click += Button_Click;
         }
-
-        private void Sev_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if(radioButton1.Checked==true)
@@ -95,7 +89,6 @@ namespace WindowsFormsApp2
                 Sev.Text = "Find 100%";
             }
         }
-
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if(radioButton2.Checked==true) 
